@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Alguien Especial </title>
+  <link rel="stylesheet" href="css.css" />
+</head>
+<body>
+  <div class="contenedor">
+    <h1>Para la renegona de Ali!</h1>
+    <p class="dedicatoria">
+      Esta página es solo para ti, ya sabras que hacer....
+      Gracias por existir, te adoro...  
+    </p>
+    <div class="girasoles">
+      <img src="img/ali.jpeg" alt="Girasol" />
+      <img src="img/michi2.jpg" alt="Girasol" />
+      <img src="img/ali.jpeg" alt="Girasol" />
+    </div>
+    <p class="frase">
+      “Me importa un comino que piensen mal de mí, yo no vivo de lo que piensen los demás,
+      vivo de lo que siento... y lo que siento por ti, no me lo quita nadie.”<br>
+      <span class="autor">— Mario Benedetti</span>
+    </p>
+
+    <!-- Botón Sorpresa -->
+    <button class="sorpresa-btn" onclick="mostrarSorpresa()">Haz clic aquí, con su cochina manito</button>
+    <p id="mensajeSorpresa" class="mensaje-sorpresa"></p>
+    
+    <!-- Boton para ir a la otra pagina gogo -->
+    <a href="pagina2.html"> <button class="sorpresa-btn">Mas...</button> </a>
+
+    <!-- Botón de WhatsApp -->
+    <a href="https://wa.me/59162056381" target="_blank">
+      <button class="password-btn">Pedir Contraseña</button>
+    </a>
+
+    <!-- Campo de contraseña e imagen secreta -->
+    <div class="password-div" style="margin-top: 20px;">
+      <input type="password" id="passwordInput" placeholder="Introduce la contraseña" />
+      <button onclick="verificarPassword()">Enviar</button>
+      <p id="passwordMessage" class="password-message"></p>
+    </div>
+
+    <div id="imageDiv" class="image-div" style="display:none;">
+      <img id="secretImage" src="" alt="Imagen secreta" style="max-width:100%; border-radius: 20px; margin-top: 20px;" />
+    </div>
+  </div>
+
+  <script>
+    function mostrarSorpresa() {
+      var mensaje = document.getElementById("mensajeSorpresa");
+      mensaje.style.display = "block";
+      mensaje.innerHTML = "No debiste haber presionado el boton...\n\
+Gracias por ser tan especial para mi...porque si no hubiera sido asi, nose que habria sido de mi vida;\n\
+Me gusta mi version cuando estoy contigo...talvez no vaya a ser mejor persona despues de eso.";
+    }
+
+    function verificarPassword() {
+      var password = document.getElementById("passwordInput").value;
+      var mensaje = document.getElementById("passwordMessage");
+
+      if (password === "1234") {
+        mensaje.style.color = "green";
+        mensaje.innerHTML = "¡Contraseña correcta! Por curiosita, Ali viendo a Ali!";
+        document.getElementById("imageDiv").style.display = "block";
+        document.getElementById("secretImage").src = "img/curiosita.jpg"; // pon tu imagen secreta
+      } else {
+        mensaje.style.color = "red";
+        mensaje.innerHTML = "Ta mal viejita, intente de nuevo";
+        document.getElementById("imageDiv").style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
